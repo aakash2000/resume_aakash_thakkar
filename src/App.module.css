@@ -4,8 +4,15 @@
   padding: 56px 40px 96px;
 }
 
-@media (max-width: 900px) {
+@media screen and (max-width: 900px) {
   .main {
     padding: 28px 18px 64px;
+  }
+}
+
+@media print {
+  .main {
+    max-width: none;
+    padding: 0;
   }
 }

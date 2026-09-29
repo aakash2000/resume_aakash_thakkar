@@ -3,6 +3,7 @@ import '@fontsource/inter/500.css'
 import './styles/tokens.css'
 import './styles/global.css'
 import './styles/animations.css'
+import './styles/print.css'
 
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'

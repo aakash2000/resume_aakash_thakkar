@@ -37,12 +37,34 @@
   color: var(--color-neutral-200);
 }
 
-@media (max-width: 900px) {
+@media screen and (max-width: 900px) {
   .hero {
     grid-template-columns: minmax(0, 1fr);
   }
 
   .intro {
     gap: 28px;
+  }
+}
+
+@media print {
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .intro {
+    gap: 12px;
+  }
+
+  .facts {
+    gap: 8px;
+  }
+
+  .customersLabel {
+    font-size: 10px;
+  }
+
+  .customersList {
+    font-size: 12.5px;
   }
 }

@@ -30,9 +30,23 @@
   transform: scaleY(0);
 }
 
-@media (max-width: 900px) {
+@media screen and (max-width: 900px) {
   .track,
   .fill {
     left: 4px;
+  }
+}
+
+@media print {
+  .rail {
+    gap: 10px;
+  }
+
+  .track {
+    left: 110.5px;
+  }
+
+  .fill {
+    display: none;
   }
 }

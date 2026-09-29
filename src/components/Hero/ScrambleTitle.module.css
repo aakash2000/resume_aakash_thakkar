@@ -8,3 +8,9 @@
   background: var(--color-accent-400);
   animation: caretBlink 1.05s steps(1) 700ms 5 both;
 }
+
+@media print {
+  .caret {
+    display: none;
+  }
+}

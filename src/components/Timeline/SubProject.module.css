@@ -41,8 +41,34 @@
   font-size: 13px;
 }
 
-@media (max-width: 900px) {
+@media screen and (max-width: 900px) {
   .indented {
     padding-left: 0;
+  }
+}
+
+@media print {
+  .project {
+    gap: 3px;
+  }
+
+  .heading {
+    break-after: avoid;
+  }
+
+  .index {
+    font-size: 10.5px;
+  }
+
+  .title {
+    font-size: 13.5px;
+  }
+
+  .body {
+    gap: 4px;
+  }
+
+  .indented {
+    padding-left: 30px;
   }
 }

@@ -37,7 +37,7 @@
     opacity 200ms ease;
 }
 
-@media (max-width: 900px) {
+@media screen and (max-width: 900px) {
   .nav {
     gap: 2px;
     margin-left: 2px;

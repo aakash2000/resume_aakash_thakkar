@@ -43,7 +43,7 @@
   color: var(--color-neutral-400);
 }
 
-@media (max-width: 900px) {
+@media screen and (max-width: 900px) {
   .identity {
     grid-template-columns: 60px minmax(0, 1fr);
     grid-template-areas:
@@ -65,5 +65,29 @@
 
   .title {
     font-size: 16px;
+  }
+}
+
+@media print {
+  .identity {
+    grid-template-columns: 64px minmax(0, 1fr);
+    column-gap: 16px;
+    row-gap: 3px;
+  }
+
+  .avatar {
+    width: 64px;
+  }
+
+  .name {
+    font-size: 30px;
+  }
+
+  .title {
+    font-size: 15px;
+  }
+
+  .meta {
+    font-size: 12px;
   }
 }

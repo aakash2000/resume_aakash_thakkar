@@ -6,3 +6,10 @@
   font-size: 13px;
   color: var(--color-neutral-500);
 }
+
+@media print {
+  .footer {
+    margin-top: 14px;
+    font-size: 10.5px;
+  }
+}

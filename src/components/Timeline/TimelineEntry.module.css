@@ -97,7 +97,7 @@
   margin-top: 22px;
 }
 
-@media (max-width: 900px) {
+@media screen and (max-width: 900px) {
   .entry {
     padding-left: 22px;
   }
@@ -124,5 +124,60 @@
 @media (prefers-reduced-motion: reduce) {
   .nodeCurrent {
     animation: none;
+  }
+}
+
+@media print {
+  /* Keep short entries on one page; long ones (with sub-projects) may split between them. */
+  .entry {
+    break-inside: avoid;
+  }
+
+  .entry:has(.projects) {
+    break-inside: auto;
+  }
+
+  .node {
+    left: 106.5px;
+    top: 5px;
+    border-color: var(--color-accent);
+  }
+
+  .nodeCurrent {
+    animation: none;
+  }
+
+  .when {
+    position: static;
+    padding-top: 2px;
+    font-size: 10.5px;
+  }
+
+  .title {
+    font-size: 15px;
+    break-after: avoid;
+  }
+
+  .note {
+    font-size: 11.5px;
+  }
+
+  .org {
+    margin-top: 1px;
+    font-size: 12.5px;
+    break-after: avoid;
+  }
+
+  .orgIcon {
+    display: none;
+  }
+
+  .bullets {
+    margin-top: 4px;
+  }
+
+  .projects {
+    gap: 7px;
+    margin-top: 6px;
   }
 }

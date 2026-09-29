@@ -19,3 +19,14 @@
   background: var(--rule-fade-end);
   transform-origin: left;
 }
+
+@media print {
+  .label {
+    font-size: 10px;
+  }
+
+  .header {
+    margin-bottom: 8px;
+    break-after: avoid;
+  }
+}

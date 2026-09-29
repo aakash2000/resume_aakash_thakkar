@@ -14,12 +14,24 @@
   column-gap: 32px;
 }
 
-@media (max-width: 900px) {
+@media screen and (max-width: 900px) {
   .section {
     margin-top: 48px;
   }
 
   .twoColumn {
     grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Print: tighter rhythm and a narrower date column. The rail sits in the gap (see Timeline). */
+@media print {
+  .section {
+    margin-top: 14px;
+  }
+
+  .twoColumn {
+    grid-template-columns: 102px minmax(0, 1fr);
+    column-gap: 18px;
   }
 }

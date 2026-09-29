@@ -15,7 +15,7 @@
   text-wrap: pretty;
 }
 
-@media (max-width: 900px) {
+@media screen and (max-width: 900px) {
   .summary {
     margin-top: 40px;
     row-gap: 10px;
@@ -23,5 +23,17 @@
 
   .text {
     font-size: 16px;
+  }
+}
+
+@media print {
+  .summary {
+    margin-top: 14px;
+  }
+
+  .text {
+    max-width: none;
+    font-size: 12px;
+    line-height: 1.45;
   }
 }

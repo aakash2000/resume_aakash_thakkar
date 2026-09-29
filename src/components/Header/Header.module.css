@@ -48,7 +48,7 @@
   background: var(--rule-fade-both);
 }
 
-@media (max-width: 900px) {
+@media screen and (max-width: 900px) {
   .row {
     padding: 10px 16px;
     gap: 6px;

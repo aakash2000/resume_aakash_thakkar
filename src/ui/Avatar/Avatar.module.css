@@ -23,3 +23,10 @@
   letter-spacing: 0.04em;
   color: var(--color-accent-300);
 }
+
+@media print {
+  .avatar {
+    background: none;
+    box-shadow: inset 0 0 0 1px var(--color-divider);
+  }
+}
