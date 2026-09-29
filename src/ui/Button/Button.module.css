@@ -1,0 +1,65 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  font: inherit;
+  font-weight: var(--font-heading-weight);
+  font-size: 14px;
+  line-height: 1.2;
+  color: var(--color-text);
+  background: transparent;
+  border: 1px solid transparent;
+  padding: 5.6px 10px;
+  border-radius: var(--radius-md);
+  transition: background-color 150ms ease;
+}
+
+.btn svg {
+  display: block;
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.primary {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+.primary:hover {
+  background: color-mix(in srgb, var(--color-accent) 12%, transparent);
+}
+.primary:active {
+  background: color-mix(in srgb, var(--color-accent) 22%, transparent);
+}
+
+.secondary {
+  border-color: var(--color-divider);
+}
+.secondary:hover {
+  background: color-mix(in srgb, var(--color-text) 7%, transparent);
+}
+.secondary:active {
+  background: color-mix(in srgb, var(--color-text) 14%, transparent);
+}
+
+.ghost {
+  color: var(--color-accent);
+  padding-inline: 2.8px;
+}
+.ghost:hover {
+  background: color-mix(in srgb, var(--color-accent) 10%, transparent);
+}
+.ghost:active {
+  background: color-mix(in srgb, var(--color-accent) 18%, transparent);
+}
+
+.icon {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  flex: none;
+}
