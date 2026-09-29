@@ -81,4 +81,9 @@ export interface Resume {
   education: Entry[]
   skills: SkillGroup[]
   spokenLanguages: SpokenLanguage[]
+  /**
+   * Ready-made PDF per profile and language, as paths under /public.
+   * The download button is hidden where none is given.
+   */
+  pdfs: Partial<Record<ProfileId, Partial<Record<Lang, string>>>>
 }

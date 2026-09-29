@@ -448,4 +448,9 @@ export const resume: Resume = {
     { language: { en: 'English', de: 'Englisch' }, level: 'C1' },
     { language: { en: 'German', de: 'Deutsch' }, level: 'B1' },
   ],
+  // TODO: add German PDFs (de) once they exist.
+  pdfs: {
+    robotics: { en: 'resume/robotics-en.pdf' },
+    platform: { en: 'resume/platform-en.pdf' },
+  },
 }

@@ -5,7 +5,7 @@ export interface UiStrings {
   languageGroup: string
   profileRobotics: string
   profilePlatform: string
-  savePdf: string
+  downloadPdf: string
   customers: string
   sections: {
     nav: string
@@ -30,7 +30,7 @@ export const uiStrings: Record<Lang, UiStrings> = {
     languageGroup: 'Language',
     profileRobotics: 'Robotics / HMI',
     profilePlatform: 'Platform / Web',
-    savePdf: 'Save as PDF',
+    downloadPdf: 'Download PDF',
     customers: 'Customers',
     sections: {
       nav: 'Sections',
@@ -53,7 +53,7 @@ export const uiStrings: Record<Lang, UiStrings> = {
     languageGroup: 'Sprache',
     profileRobotics: 'Robotik / HMI',
     profilePlatform: 'Plattform / Web',
-    savePdf: 'Als PDF speichern',
+    downloadPdf: 'PDF herunterladen',
     customers: 'Kunden',
     sections: {
       nav: 'Abschnitte',

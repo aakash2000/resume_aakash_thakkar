@@ -67,4 +67,9 @@
   .pdf {
     order: 11;
   }
+
+  /* No PDF for this profile/language: the switch takes the whole row. */
+  .row:not(:has(.pdf)) .profile {
+    width: 100%;
+  }
 }

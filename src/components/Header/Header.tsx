@@ -1,8 +1,8 @@
-import { DownloadSimple } from '@phosphor-icons/react'
 import { resume } from '../../content/resume'
 import type { Lang, ProfileId } from '../../content/types'
 import { useLocale, useSettings } from '../../state/useSettings'
-import { Button, SegmentedControl } from '../../ui'
+import { SegmentedControl } from '../../ui'
+import { DownloadPdfButton } from './DownloadPdfButton'
 import styles from './Header.module.css'
 import { ScrollProgress } from './ScrollProgress'
 import { SectionNav } from './SectionNav'
@@ -38,15 +38,7 @@ export function Header() {
         />
         <SegmentedControl label={ui.languageGroup} options={LANG_OPTIONS} value={lang} onChange={setLang} />
         <ThemeToggle />
-        <Button
-          iconOnly
-          className={styles.pdf}
-          aria-label={ui.savePdf}
-          title={ui.savePdf}
-          onClick={() => window.print()}
-        >
-          <DownloadSimple size={17} aria-hidden />
-        </Button>
+        <DownloadPdfButton className={styles.pdf} />
       </div>
       <div className={styles.rule}>
         <ScrollProgress />
