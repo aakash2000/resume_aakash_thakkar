@@ -4,6 +4,7 @@ import type { Lang, ProfileId } from '../../content/types'
 import { useLocale, useSettings } from '../../state/useSettings'
 import { Button, SegmentedControl } from '../../ui'
 import styles from './Header.module.css'
+import { ScrollProgress } from './ScrollProgress'
 import { SectionNav } from './SectionNav'
 import { ThemeToggle } from './ThemeToggle'
 
@@ -47,7 +48,9 @@ export function Header() {
           <DownloadSimple size={17} aria-hidden />
         </Button>
       </div>
-      <div className={styles.rule} />
+      <div className={styles.rule}>
+        <ScrollProgress />
+      </div>
     </header>
   )
 }

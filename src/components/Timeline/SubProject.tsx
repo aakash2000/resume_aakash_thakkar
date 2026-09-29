@@ -1,4 +1,5 @@
 import type { SubProject as SubProjectData } from '../../content/types'
+import { useReveal } from '../../hooks/useReveal'
 import { cx } from '../../lib/cx'
 import { useLocale } from '../../state/useSettings'
 import { Button, TagList } from '../../ui'
@@ -25,16 +26,18 @@ export function SubProject({ project, numbered, index, expanded, onToggle }: Sub
   const tech = project.tech ? t(project.tech) : []
   const collapsible = numbered && bullets.length > COLLAPSE_ABOVE
   const collapsed = collapsible && !expanded
+  const reveal = useReveal<HTMLDivElement>()
+  const revealTags = useReveal<HTMLDivElement>('stagger')
 
   return (
-    <div className={styles.project}>
+    <div ref={reveal} className={styles.project}>
       <div className={styles.heading}>
         {numbered && <span className={styles.index}>{String(index + 1).padStart(2, '0')}</span>}
         <h4 className={styles.title}>{t(project.title)}</h4>
       </div>
       <div className={cx(styles.body, numbered && styles.indented)}>
-        {tech.length > 0 && <TagList items={tech} />}
-        <BulletList items={bullets} visibleCount={collapsed ? COLLAPSED_COUNT : undefined} />
+        {tech.length > 0 && <TagList ref={revealTags} items={tech} />}
+        <BulletList stagger items={bullets} visibleCount={collapsed ? COLLAPSED_COUNT : undefined} />
         {collapsible && (
           <div className={styles.more} data-noprint>
             <Button variant="ghost" className={styles.moreButton} aria-expanded={expanded} onClick={onToggle}>

@@ -1,0 +1,10 @@
+/* Blinks five times after the title resolves, then stays hidden. */
+.caret {
+  display: inline-block;
+  width: 2px;
+  height: 0.95em;
+  margin-left: 5px;
+  vertical-align: -0.12em;
+  background: var(--color-accent-400);
+  animation: caretBlink 1.05s steps(1) 700ms 5 both;
+}

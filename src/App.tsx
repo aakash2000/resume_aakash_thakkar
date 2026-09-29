@@ -1,3 +1,4 @@
+import { useRef } from 'react'
 import styles from './App.module.css'
 import { Footer } from './components/Footer/Footer'
 import { Header } from './components/Header/Header'
@@ -6,16 +7,21 @@ import { Skills } from './components/Skills/Skills'
 import { Summary } from './components/Summary/Summary'
 import { TimelineSection } from './components/Timeline/TimelineSection'
 import { resume } from './content/resume'
+import { useFinishAnimationsOnPrint } from './hooks/useFinishAnimationsOnPrint'
+import { useSwitchAnimation } from './hooks/useSwitchAnimation'
 import { useLocale, useProfile } from './state/useSettings'
 
 export default function App() {
   const { ui } = useLocale()
   const profile = useProfile()
+  const mainRef = useRef<HTMLElement>(null)
+  useSwitchAnimation(mainRef)
+  useFinishAnimationsOnPrint()
 
   return (
     <div id="top">
       <Header />
-      <main className={styles.main}>
+      <main ref={mainRef} className={styles.main}>
         <Hero />
         <Summary />
         <TimelineSection

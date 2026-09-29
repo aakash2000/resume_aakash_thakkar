@@ -5,12 +5,16 @@
   gap: 44px;
 }
 
-.track {
+.track,
+.fill {
   position: absolute;
   left: 164px;
   top: 12px;
   bottom: 0;
   width: 1px;
+}
+
+.track {
   background: linear-gradient(
     to bottom,
     var(--color-neutral-700),
@@ -19,8 +23,16 @@
   );
 }
 
+/* Accent line drawn over the track as the reader scrolls (scaleY set from JS). */
+.fill {
+  background: linear-gradient(to bottom, var(--color-accent), var(--color-accent-700) 70%, transparent);
+  transform-origin: top;
+  transform: scaleY(0);
+}
+
 @media (max-width: 900px) {
-  .track {
+  .track,
+  .fill {
     left: 4px;
   }
 }

@@ -1,5 +1,6 @@
 import { ArrowUpRight } from '@phosphor-icons/react'
 import type { Entry } from '../../content/types'
+import { useReveal } from '../../hooks/useReveal'
 import { cx } from '../../lib/cx'
 import { useLocale } from '../../state/useSettings'
 import layout from '../Section/layout.module.css'
@@ -29,10 +30,11 @@ export function TimelineEntry({ entry, numberedProjects, isExpanded, onTogglePro
   const { ui, t } = useLocale()
   const current = !entry.end
   const bullets = entry.bullets ? t(entry.bullets) : []
+  const reveal = useReveal<HTMLElement>()
 
   return (
-    <article className={cx(layout.twoColumn, styles.entry)}>
-      <span aria-hidden className={cx(styles.node, current && styles.nodeCurrent)} />
+    <article ref={reveal} className={cx(layout.twoColumn, styles.entry)}>
+      <span aria-hidden className={cx(styles.node, current && styles.nodeCurrent)} data-timeline-node={!current || undefined} />
       <div className={styles.when}>
         <span>
           {entry.start} – {entry.end ?? ui.present}

@@ -1,15 +1,18 @@
 import type { Stat } from '../../content/types'
-import { useLocale, useProfile } from '../../state/useSettings'
+import { useReveal } from '../../hooks/useReveal'
+import { easeOutCubic, useTween } from '../../hooks/useTween'
+import { useLocale, useProfile, useSettings } from '../../state/useSettings'
 import styles from './Stats.module.css'
 
-function StatItem({ stat }: { stat: Stat }) {
+function StatItem({ stat, progress }: { stat: Stat; progress: number }) {
   const { t } = useLocale()
+  const reveal = useReveal<HTMLDivElement>()
   return (
-    <div className={styles.stat}>
+    <div ref={reveal} className={styles.stat}>
       <span className={styles.mark} aria-hidden />
       <span className={styles.value}>
         {stat.prefix}
-        {stat.value}
+        {Math.round(stat.value * progress)}
         {stat.suffix}
         {stat.unit && <span className={styles.unit}>{t(stat.unit)}</span>}
       </span>
@@ -20,10 +23,14 @@ function StatItem({ stat }: { stat: Stat }) {
 
 export function Stats() {
   const profile = useProfile()
+  const { motion } = useSettings()
+  // Numbers count up once, on page load.
+  const progress = easeOutCubic(useTween({ duration: 1200, delay: 250, enabled: motion }))
+
   return (
     <div className={styles.stats}>
-      {profile.stats.map((stat) => (
-        <StatItem key={`${stat.value}-${stat.suffix ?? ''}-${stat.prefix ?? ''}`} stat={stat} />
+      {profile.stats.map((stat, i) => (
+        <StatItem key={i} stat={stat} progress={progress} />
       ))}
     </div>
   )
