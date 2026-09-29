@@ -1,0 +1,39 @@
+.header {
+  margin-bottom: 28px;
+}
+
+.rows {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.row {
+  align-items: baseline;
+}
+
+.label {
+  font-size: 14px;
+  color: var(--color-neutral-400);
+}
+
+.spoken {
+  margin-top: 10px;
+}
+
+.languages {
+  display: flex;
+  gap: 24px;
+  font-size: 14.5px;
+  color: var(--color-neutral-200);
+}
+
+.level {
+  color: var(--color-neutral-500);
+}
+
+@media (max-width: 900px) {
+  .row {
+    row-gap: 8px;
+  }
+}

@@ -1,0 +1,25 @@
+/*
+ * Shared page rhythm: every section after the hero, and the label/content
+ * two-column grid used by the summary, timeline entries and skill rows.
+ */
+
+.section {
+  margin-top: 64px;
+  scroll-margin-top: 90px;
+}
+
+.twoColumn {
+  display: grid;
+  grid-template-columns: 148px minmax(0, 1fr);
+  column-gap: 32px;
+}
+
+@media (max-width: 900px) {
+  .section {
+    margin-top: 48px;
+  }
+
+  .twoColumn {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

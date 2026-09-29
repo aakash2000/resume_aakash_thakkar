@@ -1,0 +1,128 @@
+.entry {
+  position: relative;
+}
+
+/* Circle on the rail. Lights up (data-lit) once scrolled past; the current role pulses. */
+.node {
+  position: absolute;
+  left: 160px;
+  top: 8px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-neutral-600);
+  background: var(--color-bg);
+  transition: border-color 400ms ease;
+}
+
+.node[data-lit] {
+  border-color: var(--color-accent);
+}
+
+.nodeCurrent {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  animation: livePulse 2.4s ease-out infinite;
+}
+
+.when {
+  position: sticky;
+  top: 84px;
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-top: 5px;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--color-neutral-400);
+}
+
+.location {
+  color: var(--color-neutral-500);
+}
+
+.body {
+  min-width: 0;
+}
+
+.title {
+  font-size: 21px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.note {
+  margin-left: 8px;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--color-neutral-500);
+}
+
+.org {
+  margin-top: 4px;
+  font-size: 15px;
+}
+
+.orgName {
+  color: var(--color-neutral-300);
+}
+
+.orgLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--color-neutral-300);
+  transition: color 200ms ease;
+}
+
+.orgLink:hover {
+  color: var(--color-accent-300);
+}
+
+.orgIcon {
+  flex: none;
+  opacity: 0.75;
+}
+
+.bullets {
+  margin-top: 14px;
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-top: 22px;
+}
+
+@media (max-width: 900px) {
+  .entry {
+    padding-left: 22px;
+  }
+
+  .node {
+    left: 0;
+    top: 4px;
+  }
+
+  .when {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2px 10px;
+    padding-top: 0;
+    margin-bottom: 6px;
+  }
+
+  .title {
+    font-size: 19px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nodeCurrent {
+    animation: none;
+  }
+}

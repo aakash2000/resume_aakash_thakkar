@@ -1,0 +1,21 @@
+.label {
+  font-size: 12px;
+  line-height: 1.55;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-neutral-500);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.rule {
+  flex: 1;
+  height: 1px;
+  background: var(--rule-fade-end);
+  transform-origin: left;
+}

@@ -1,0 +1,27 @@
+.summary {
+  margin-top: 56px;
+  scroll-margin-top: 90px;
+}
+
+.label {
+  padding-top: 4px;
+}
+
+.text {
+  max-width: 70ch;
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--color-neutral-200);
+  text-wrap: pretty;
+}
+
+@media (max-width: 900px) {
+  .summary {
+    margin-top: 40px;
+    row-gap: 10px;
+  }
+
+  .text {
+    font-size: 16px;
+  }
+}

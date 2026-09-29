@@ -5,7 +5,24 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aakash Thakkar · Resume</title>
-    <meta name="description" content="Resume of Aakash Thakkar" />
+    <meta
+      name="description"
+      content="Aakash Thakkar, full stack engineer in Paderborn: industrial robotics, HMI and platform engineering with React, TypeScript and Python."
+    />
+    <script>
+      // Apply the saved or system theme before first paint to avoid a flash.
+      // Keep the storage key in sync with src/hooks/useTheme.ts.
+      ;(function () {
+        var theme
+        try {
+          theme = localStorage.getItem('aakash-resume-theme')
+        } catch (e) {}
+        if (theme !== 'light' && theme !== 'dark') {
+          theme = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
+        }
+        document.documentElement.dataset.theme = theme
+      })()
+    </script>
   </head>
   <body>
     <div id="root"></div>

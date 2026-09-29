@@ -13,8 +13,6 @@ interface SegmentedControlProps<T extends string> {
   options: readonly SegmentOption<T>[]
   value: T
   onChange: (value: T) => void
-  /** Stretch options to share the full width equally. */
-  stretch?: boolean
   className?: string
 }
 
@@ -24,12 +22,11 @@ export function SegmentedControl<T extends string>({
   options,
   value,
   onChange,
-  stretch = false,
   className,
 }: SegmentedControlProps<T>) {
   const name = useId()
   return (
-    <div role="radiogroup" aria-label={label} className={cx(styles.seg, stretch && styles.stretch, className)}>
+    <div role="radiogroup" aria-label={label} className={cx(styles.seg, className)}>
       {options.map((opt) => (
         <label key={opt.value} className={styles.option}>
           <input

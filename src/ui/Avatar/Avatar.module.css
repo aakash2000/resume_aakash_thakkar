@@ -1,0 +1,25 @@
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--color-surface);
+  box-shadow: inset 0 0 0 1px var(--color-divider);
+  container-type: inline-size;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.initials {
+  font-size: 32cqi;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--color-accent-300);
+}

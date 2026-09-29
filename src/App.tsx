@@ -1,59 +1,33 @@
-import { EducationItem, ExperienceItem, ProjectItem, Skills } from './components/Entries'
-import { Header } from './components/Header'
-import { Section } from './components/Section'
-import { resume } from './data/resume'
+import styles from './App.module.css'
+import { Footer } from './components/Footer/Footer'
+import { Header } from './components/Header/Header'
+import { Hero } from './components/Hero/Hero'
+import { Skills } from './components/Skills/Skills'
+import { Summary } from './components/Summary/Summary'
+import { TimelineSection } from './components/Timeline/TimelineSection'
+import { resume } from './content/resume'
+import { useLocale, useProfile } from './state/useSettings'
 
-function App() {
+export default function App() {
+  const { ui } = useLocale()
+  const profile = useProfile()
+
   return (
-    <>
-      <div className="toolbar screen-only">
-        <button type="button" onClick={() => window.print()}>
-          Download PDF
-        </button>
-      </div>
-      <main className="page">
-        <Header {...resume} />
-
-        <Section title="Summary">
-          <p>{resume.summary}</p>
-        </Section>
-
-        <Section title="Experience">
-          {resume.experience.map((e) => (
-            <ExperienceItem key={`${e.company}-${e.start}`} item={e} />
-          ))}
-        </Section>
-
-        {resume.projects?.length ? (
-          <Section title="Projects">
-            {resume.projects.map((p) => (
-              <ProjectItem key={p.name} item={p} />
-            ))}
-          </Section>
-        ) : null}
-
-        <Section title="Skills">
-          <Skills groups={resume.skills} />
-        </Section>
-
-        <Section title="Education">
-          {resume.education.map((e) => (
-            <EducationItem key={`${e.school}-${e.degree}`} item={e} />
-          ))}
-        </Section>
-
-        {resume.certifications?.length ? (
-          <Section title="Certifications">
-            <ul className="bullets">
-              {resume.certifications.map((c) => (
-                <li key={c}>{c}</li>
-              ))}
-            </ul>
-          </Section>
-        ) : null}
+    <div id="top">
+      <Header />
+      <main className={styles.main}>
+        <Hero />
+        <Summary />
+        <TimelineSection
+          id="experience"
+          label={ui.sections.experience}
+          entries={resume.experience(profile)}
+          numberedProjects
+        />
+        <TimelineSection id="education" label={ui.sections.education} entries={resume.education} />
+        <Skills />
+        <Footer />
       </main>
-    </>
+    </div>
   )
 }
-
-export default App

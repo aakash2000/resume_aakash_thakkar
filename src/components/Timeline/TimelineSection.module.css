@@ -1,0 +1,26 @@
+.rail {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+}
+
+.track {
+  position: absolute;
+  left: 164px;
+  top: 12px;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    var(--color-neutral-700),
+    var(--color-neutral-700) calc(100% - 48px),
+    transparent
+  );
+}
+
+@media (max-width: 900px) {
+  .track {
+    left: 4px;
+  }
+}
