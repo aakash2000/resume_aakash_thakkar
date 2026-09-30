@@ -23,6 +23,9 @@ const CARD_SLOTS: [number, number][] = [
 const DROP_X = 186
 const DROP_Y = 140
 
+/** Time until the last animation (drop-target ping) ends. */
+export const BROWSER_RUN_MS = 3300 + 700
+
 /** Contents of the five dashboard cards: bars, donut, text lines, toggles, sparkline. */
 function CardContent({ index, x, y }: { index: number; x: number; y: number }): ReactNode {
   switch (index) {

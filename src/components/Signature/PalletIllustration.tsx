@@ -122,6 +122,9 @@ const TOP_Z = BASE_HEIGHT + (LAYERS - 1) * LAYER_HEIGHT + LAYER_HEIGHT - 1.5
 const GRIP_Z = TOP_Z + 0.5
 const GRIP_Y = (2 * GRID - 1) * CELL * SIN30 - (GRIP_Z + 3)
 
+/** Time until the last animation (gripper retract) ends. */
+export const PALLET_RUN_MS = 2750 + 600
+
 const animation = (animate: boolean, value: string): CSSProperties | undefined =>
   animate ? { animation: value } : undefined
 
