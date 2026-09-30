@@ -65,8 +65,10 @@
 :root[data-theme='light'] {
   color-scheme: light;
 
-  --color-bg: #e4e7f1;
-  --color-surface: #d9dce8;
+  /* Background toned down from the handoff's #e4e7f1 to reduce glare; fills and
+     the faintest text grey follow so chips stay visible and labels keep AA contrast. */
+  --color-bg: #d9dde8;
+  --color-surface: #ced2de;
   --color-text: #292b31;
   --color-accent: #6e62b2;
   --color-divider: color-mix(in srgb, #292b31 16%, transparent);
@@ -74,12 +76,12 @@
   --color-neutral-100: #25272d;
   --color-neutral-200: #383b45;
   --color-neutral-300: #474a58;
-  --color-neutral-400: #575b6e;
-  --color-neutral-500: #63677b;
+  --color-neutral-400: #4d5165;
+  --color-neutral-500: #595d71;
   --color-neutral-600: #9296aa;
-  --color-neutral-700: #bcc0d2;
-  --color-neutral-800: #d2d5e3;
-  --color-neutral-900: #dcdfea;
+  --color-neutral-700: #b3b8ca;
+  --color-neutral-800: #c8ccda;
+  --color-neutral-900: #d1d5e0;
 
   --color-accent-100: #2b2741;
   --color-accent-200: #3d3563;
@@ -88,10 +90,10 @@
   --color-accent-500: #8a7ed4;
   --color-accent-600: #aaa0ef;
   --color-accent-700: #c6c0f0;
-  --color-accent-800: #d8d5f2;
-  --color-accent-900: #e2e0f4;
+  --color-accent-800: #cdc9ec;
+  --color-accent-900: #d9d6ef;
 
-  --shadow-sm: 0 0 0 1px #dfe2f0;
+  --shadow-sm: 0 0 0 1px #d0d4e2;
   --shadow-md: 0 0 0 1px #c9cddf, 0 6px 18px rgba(41, 43, 49, 0.12);
   --shadow-lg: 0 0 0 1px #9ea2b6, 0 16px 40px rgba(41, 43, 49, 0.16);
 }
